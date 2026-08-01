@@ -1,0 +1,30 @@
+name: Rust CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compile standalone lab files
+        run: |
+          for f in lab3/*.rs lab4/*.rs lab5/exerciseA_lifetimes.rs lab5/exerciseB_generics.rs lab6/exerciseA_spawn.rs lab6/exerciseB_shared_state.rs lab6/exerciseC_channels.rs lab6/exerciseD_file_io.rs; do
+            if [ -f "$f" ]; then
+              echo "Compiling $f"
+              rustc --edition 2021 "$f" -o /tmp/out
+            fi
+          done
+
+      - name: Build lab5 project
+        if: hashFiles('lab5/Cargo.toml') != ''
+        run: cargo build --manifest-path lab5/Cargo.toml
+
+      - name: Build lab6 tokio project
+        if: hashFiles('lab6/Cargo.toml') != ''
+        run: cargo build --manifest-path lab6/Cargo.toml

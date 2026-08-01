@@ -18,3 +18,7 @@ Each lab folder contains a README describing its exercises. `lab5` and `lab6` in
 
 ## Author
 gifted18
+
+## Lecturers
+- Godwinss24
+- Israel Umana

@@ -1,0 +1,8 @@
+[package]
+name = "lab5_geometry"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "lab5_geometry"
+path = "src/main.rs"

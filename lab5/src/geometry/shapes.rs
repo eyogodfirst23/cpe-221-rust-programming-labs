@@ -1,3 +1,5 @@
+use crate::utils::round2;
+
 pub struct Point {
     pub x: f64,
     pub y: f64,
@@ -9,15 +11,19 @@ impl Point {
     }
 
     pub fn distance(&self, other: &Point) -> f64 {
-        ((self.x - other.x).powi(2) + (self.y - other.y).powi(2)).sqrt()
+        let dx = self.x - other.x;
+        let dy = self.y - other.y;
+        round2((dx.powi(2) + dy.powi(2)).sqrt())
     }
-pub fn translate(&self, dx: f64, dy: f64) -> Point {
+
+    pub fn translate(&self, dx: f64, dy: f64) -> Point {
         Point { x: self.x + dx, y: self.y + dy }
     }
 
     pub fn scale(&self, factor: f64) -> Point {
         Point { x: self.x * factor, y: self.y * factor }
     }
+}
 
 pub struct Polygon {
     pub vertices: Vec<Point>,
@@ -30,12 +36,12 @@ impl Polygon {
             return 0.0;
         }
         (0..n)
-            .map(|i| {
+           .map(|i| {
                 let a = &self.vertices[i];
                 let b = &self.vertices[(i + 1) % n];
                 a.distance(b)
             })
-            .sum()
+           .sum()
     }
 
     pub fn is_closed(&self) -> bool {

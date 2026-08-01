@@ -5,6 +5,7 @@ edition = "2021"
 
 [dependencies]
 tokio = { version = "1", features = ["full"] }
+
 [[bin]]
 name = "exercise_async_main"
 path = "exercise_async_main.rs"

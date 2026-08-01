@@ -5,7 +5,3 @@ edition = "2021"
 
 [dependencies]
 tokio = { version = "1", features = ["full"] }
-
-[[bin]]
-name = "exerciseE_async_main"
-path = "exerciseE_async_main.rs"

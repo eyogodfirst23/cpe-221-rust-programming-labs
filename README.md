@@ -1,7 +1,7 @@
 # CPE 221 — Rust Programming Labs
 
-**Name:** Abraham Otoabasi Solomon
-**Reg No:** 24/EG/CO/322
+**Name:** Eyo Godfirst okon
+**Reg No:** 24/EG/CO/254
 
 Solutions for Lab Sessions 3–6 of the CPE 221 Rust Programming course (Academic Year 2025–2026).
 
@@ -17,7 +17,7 @@ Solutions for Lab Sessions 3–6 of the CPE 221 Rust Programming course (Academi
 Each lab folder contains a README describing its exercises. `lab5` and `lab6` include Cargo projects with their own `Cargo.toml`.
 
 ## Author
-gifted18
+eyogodfirst23
 
 ## Lecturers
 - Godwinss24

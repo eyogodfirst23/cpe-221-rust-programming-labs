@@ -1,7 +1,7 @@
 mod geometry;
 mod utils;
 
-use geometry::shapes::Polygon;
+use geometry::Polygon;
 use geometry::Point;
 
 fn main() {
